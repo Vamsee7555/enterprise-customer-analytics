@@ -1,105 +1,185 @@
-# IMDb Movie Recommendation System Using Storylines
+# Enterprise AI-Powered Customer Analytics and Strategic Insight Framework
 
 ## Project Overview
 
-This project is a Content-Based Movie Recommendation System that recommends similar movies based on their storylines. The system uses Natural Language Processing (NLP) techniques and Cosine Similarity to identify movies with similar plot descriptions.
+This project is an Enterprise AI-Powered Customer Analytics Framework designed to help organizations understand customer behavior, predict future outcomes, and make data-driven business decisions.
 
-The recommendation engine helps users discover movies that match their interests based on movie content rather than ratings or popularity.
+The system combines Customer Churn Prediction, Revenue Forecasting, Customer Segmentation, and Customer 360 Analysis into a single analytics platform. An interactive Streamlit dashboard is used to visualize insights and support strategic decision-making.
 
 ---
 
-## Features
+## Problem Statement
 
-* Movie recommendation based on storyline similarity
-* Content-based filtering approach
-* Interactive movie search
-* Fast recommendation generation
-* IMDb movie dataset integration
-* User-friendly interface
+Organizations collect large amounts of customer data but often struggle to convert it into actionable insights. This project addresses that challenge by developing an intelligent analytics framework capable of:
+
+* Predicting customer churn
+* Forecasting future revenue
+* Segmenting customers into meaningful groups
+* Providing Customer 360 insights
+* Supporting business strategy through data analytics
+
+---
+
+## Project Objectives
+
+* Predict customer churn using Machine Learning
+* Forecast future customer revenue
+* Perform customer segmentation
+* Build a Customer 360 profile
+* Create an interactive dashboard using Streamlit
+* Generate actionable business insights
+
+---
+
+## Dataset Description
+
+### Datasets Used
+
+* fact_customers.csv
+* fact_transactions.csv
+* fact_usage_monthly.csv
+* fact_engagement_events.csv
+* dim_geography.csv
+* dim_industry.csv
+* dim_product.csv
+
+### Important Features
+
+* Customer_ID
+* Health_Score
+* Tenure_Months
+* Daily_Active_Users
+* Lifetime_Revenue_USD
+* Support_Tickets
+* CSAT_Score
+* NPS_Score
+* Churn
+* Next_Quarter_Revenue_USD
 
 ---
 
 ## Technologies Used
 
+### Programming Language
+
 * Python
+
+### Libraries
+
 * Pandas
 * NumPy
 * Scikit-Learn
-* NLTK
+* XGBoost
+* Imbalanced-Learn (SMOTE)
+* Matplotlib
+* Seaborn
 * Streamlit
-* Pickle
+* Joblib
 
 ---
 
-## Dataset
+## Machine Learning Models
 
-Dataset used:
+### 1. Customer Churn Prediction
 
-* imdb_movies_2024.csv
+Algorithm Used:
 
-Main attributes:
+* XGBoost Classifier
 
-* Movie Title
-* Storyline / Overview
-* Genre
-* Rating
-* Release Year
+Target Variable:
+
+```text
+Churn
+```
+
+Purpose:
+
+Predict customers who are likely to leave the company.
+
+---
+
+### 2. Revenue Forecasting
+
+Algorithm Used:
+
+* Gradient Boosting Regressor
+
+Target Variable:
+
+```text
+Next_Quarter_Revenue_USD
+```
+
+Purpose:
+
+Predict future customer revenue.
+
+---
+
+### 3. Customer Segmentation
+
+Algorithm Used:
+
+* K-Means Clustering
+
+Features Used:
+
+* Tenure_Months
+* Lifetime_Revenue_USD
+* Health_Score
+* Support_Tickets
+* Daily_Active_Users
+
+Purpose:
+
+Group customers into meaningful segments for business analysis.
 
 ---
 
 ## Project Structure
 
 ```text
-IMDb Movie Recommendation/
+enterprise-customer-analytics/
 │
-├── imdb_movies_2024.csv
-├── recommendation.py
+├── data/
+│   ├── fact_customers.csv
+│   ├── fact_transactions.csv
+│   ├── fact_usage_monthly.csv
+│   ├── fact_engagement_events.csv
+│   ├── dim_geography.csv
+│   ├── dim_industry.csv
+│   └── dim_product.csv
+│
+├── models/
+│   ├── churn_model.pkl
+│   ├── revenue_model.pkl
+│   └── clustering_model.pkl
+│
+├── train_models.py
+├── dataset_check.py
+├── eda.py
 ├── app.py
-├── movie_similarity.pkl
 ├── requirements.txt
-├── README.md
-└── screenshots/
+└── README.md
 ```
-
----
-
-## Methodology
-
-### Data Preprocessing
-
-* Removed missing values
-* Cleaned text data
-* Converted storyline text into numerical vectors
-
-### Feature Extraction
-
-TF-IDF Vectorization was used to convert movie storylines into numerical representations.
-
-### Similarity Calculation
-
-Cosine Similarity was used to measure similarity between movies.
-
-### Recommendation Generation
-
-When a user selects a movie, the system finds the most similar movies based on storyline content.
 
 ---
 
 ## Installation
 
-Clone the repository:
+Clone Repository
 
 ```bash
-git clone https://github.com/Vamsee7555/imdb-movie-recommendation-system.git
+git clone https://github.com/Vamsee7555/enterprise-customer-analytics.git
 ```
 
-Navigate to the project folder:
+Navigate to Project Folder
 
 ```bash
-cd imdb-movie-recommendation-system
+cd enterprise-customer-analytics
 ```
 
-Install dependencies:
+Install Required Packages
 
 ```bash
 pip install -r requirements.txt
@@ -107,7 +187,27 @@ pip install -r requirements.txt
 
 ---
 
-## Run the Application
+## Running the Project
+
+### Dataset Validation
+
+```bash
+python dataset_check.py
+```
+
+### Exploratory Data Analysis
+
+```bash
+python eda.py
+```
+
+### Train Models
+
+```bash
+python train_models.py
+```
+
+### Run Dashboard
 
 ```bash
 streamlit run app.py
@@ -115,48 +215,41 @@ streamlit run app.py
 
 ---
 
-## Sample Output
+## Output
 
-Input Movie:
+The system provides:
 
-```text
-Inception
-```
-
-Recommended Movies:
-
-```text
-Interstellar
-Shutter Island
-The Prestige
-Memento
-Tenet
-```
+* Churn Risk Prediction
+* Revenue Forecasting
+* Customer Segmentation
+* Customer 360 Profile
+* Business Insights Dashboard
 
 ---
 
-## Business Applications
+## Business Benefits
 
-* OTT Platforms
-* Streaming Services
-* Movie Discovery Systems
-* Personalized Entertainment Recommendations
+* Improved Customer Retention
+* Better Revenue Planning
+* Personalized Customer Engagement
+* Strategic Decision Making
+* Increased Customer Lifetime Value
 
 ---
 
 ## Future Enhancements
 
-* Hybrid Recommendation System
-* User Rating Integration
-* Collaborative Filtering
+* Real-Time Prediction Engine
 * Deep Learning Models
-* Real-Time Recommendations
+* Cloud Deployment
+* Generative AI Recommendations
+* Automated Reporting
 
 ---
 
 ## Conclusion
 
-The IMDb Movie Recommendation System successfully recommends similar movies using storyline-based content filtering. The project demonstrates the practical application of Natural Language Processing and Machine Learning in recommendation systems.
+The Enterprise AI-Powered Customer Analytics and Strategic Insight Framework successfully integrates customer analytics and machine learning to provide actionable business intelligence. The system enables organizations to predict customer behavior, forecast revenue, segment customers, and improve strategic decision-making.
 
 ---
 
